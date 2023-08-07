@@ -5,7 +5,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(true)
 
   return(
-    <nav class="flex  dark:bg-slate-900 items-center relative justify-between bg-white px-5 py-6 w-full drop-shadow-xl ">
+    <nav class="flex  dark:bg-slate-900 items-center relative justify-between bg-inherit	 px-5 py-6 w-full drop-shadow-xl ">
   <div>
   <svg width="41" height="39" viewBox="0 0 41 39" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path class="dark:fill-white" d="M8.63077 14.8549C8.82584 14.8549 9.01902 14.8165 9.19926 14.7418C9.37949 14.6672 9.54324 14.5578 9.68119 14.4198C9.81914 14.2819 9.92858 14.1182 10.0032 13.9379C10.0779 13.7577 10.1163 13.5645 10.1163 13.3695C10.1163 10.6116 11.2119 7.9667 13.162 6.0166C15.112 4.0665 17.757 2.97094 20.5148 2.97094C23.2727 2.97094 25.9176 4.0665 27.8677 6.0166C29.8178 7.9667 30.9134 10.6116 30.9134 13.3695C30.9172 13.7609 31.0754 14.1349 31.3537 14.4103C31.6317 14.6857 32.0074 14.8402 32.3989 14.8402C32.7903 14.8402 33.1659 14.6857 33.444 14.4103C33.7222 14.1349 33.8804 13.7609 33.8843 13.3695C33.8843 11.6138 33.5385 9.87525 32.8666 8.25319C32.1947 6.63113 31.21 5.15729 29.9685 3.91582C28.7269 2.67435 27.2531 1.68956 25.6311 1.01769C24.009 0.345811 22.2706 0 20.5148 0C18.7591 0 17.0207 0.345811 15.3985 1.01769C13.7765 1.68956 12.3027 2.67435 11.0612 3.91582C9.81972 5.15729 8.83494 6.63113 8.16305 8.25319C7.49118 9.87525 7.14537 11.6138 7.14537 13.3695C7.14537 13.7634 7.30187 14.1412 7.58043 14.4198C7.859 14.6984 8.23682 14.8549 8.63077 14.8549Z" fill="#1A1E2C" />
@@ -24,19 +24,19 @@ const Navbar = () => {
       </svg>
     </div>
     <li class="font-medium text-2xl p-3 hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-primary">
-      <a href="#" class="dark:text-white">Home</a>
+      <a href="#" class="dark:text-white hover:opacity-75">Home</a>
     </li>
     <li class="font-medium text-2xl p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white">Genres</a>
+      <a href="#" class="dark:text-white hover:opacity-75">Genres</a>
     </li>
     <li class="font-medium text-2xl p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white">Movies</a>
+      <a href="#" class="dark:text-white hover:opacity-75">Movies</a>
     </li>
     <li class="font-medium text-2xl p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white">TV Shows</a>
+      <a href="#" class="dark:text-white hover:opacity-75">TV Shows</a>
     </li>
     <li class="font-medium text-2xl p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white">Top IMDB</a>
+      <a href="#" class="dark:text-white hover:opacity-75">Top IMDB</a>
     </li>
   </ul>
   <div class="flex gap-3 items-center">
@@ -45,7 +45,7 @@ const Navbar = () => {
        <div class="drop-down  w-48 overflow-hidden bg-white rounded-md shadow absolute top-12 right-3">
        {toggle && (
         <ul>
-          <li class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
+          <li class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-100">
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -54,7 +54,7 @@ const Navbar = () => {
             </span>
             <button> My Account </button>
           </li>
-          <li class="px-3  py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
+          <li class="px-3  py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-100">
             <span>
          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
