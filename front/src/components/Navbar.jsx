@@ -1,11 +1,9 @@
 import React from 'react'
+import  { useState } from 'react'
 
 const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [toggle, setToggle] = useState(true)
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
   return(
     <nav class="flex dark:bg-slate-900 items-center relative justify-between bg-white px-5 py-6 w-full drop-shadow-xl ">
   <div>
@@ -42,11 +40,10 @@ const Navbar = () => {
     </li>
   </ul>
   <div class="flex gap-3 items-center">
-    
 
-    <div class="h-10 w-10 hover:ring-4 user cursor-pointer relative ring-blue-700/30 rounded-full bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')]">
-      
+    <div  onClick={() => setToggle(!toggle)} class="h-10 w-10 hover:ring-4 user cursor-pointer relative ring-blue-700/30 rounded-full bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')]">      
        <div class="drop-down  w-48 overflow-hidden bg-white rounded-md shadow absolute top-12 right-3">
+       {toggle && (
         <ul>
           <li class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
             <span>
@@ -57,7 +54,6 @@ const Navbar = () => {
             </span>
             <button> My Account </button>
           </li>
-          
           <li class="px-3  py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-400">
             <span>
          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,8 +62,8 @@ const Navbar = () => {
             </span>
             <button> Logout </button>
           </li>
-      
         </ul>
+         )}
       </div>
     </div>
     <div class="sm:hidden cursor-pointer" id="mobile-toggle">
