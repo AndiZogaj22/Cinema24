@@ -6,11 +6,14 @@ const Footer = () => {
     <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div>
-        <img src="#" class="mr-5 h-6 sm:h-9" alt="logo" />
-          <p class="max-w-xs mt-4 text-sm text-gray-600">
+        <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="49" viewBox="0 0 256 256"><path fill="#625DF5" d="M256 113.765h-74.858l64.83-37.43l-14.237-24.667l-64.83 37.43l37.421-64.825l-24.667-14.246l-37.421 64.826V0h-28.476v74.86L76.326 10.027L51.667 24.266L89.096 89.09L24.265 51.668l-14.238 24.66l64.83 37.43H0v28.477h74.85l-64.823 37.43l14.238 24.667l64.824-37.423l-37.43 64.825l24.667 14.239l37.429-64.832V256h28.476v-74.853l37.422 64.826l24.665-14.239l-37.428-64.832l64.83 37.43l14.24-24.667l-64.825-37.423h74.85v-28.477H256ZM128 166.73c-21.472 0-38.876-17.403-38.876-38.876c0-21.472 17.404-38.876 38.876-38.876c21.472 0 38.875 17.404 38.875 38.876c0 21.473-17.403 38.876-38.875 38.876Z"/></svg>
+
+  </div>
+          <p class="max-w-xs mt-4 text-sm text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, accusantium.
           </p>
-          <div class="flex mt-8 space-x-6 text-gray-600">
+          <div class="flex mt-8 space-x-6 text-white">
             <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
               <span class="sr-only"> Facebook </span>
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -35,12 +38,7 @@ const Footer = () => {
                 <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
               </svg>
             </a>
-            <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
-              <span class="sr-only"> Dribbble </span>
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fillRule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clipRule="evenodd" />
-              </svg>
-            </a>
+            
           </div>
         </div>
         <div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
@@ -48,7 +46,7 @@ const Footer = () => {
             <p class="font-medium">
               Company
             </p>
-            <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <nav class="flex flex-col mt-4 space-y-2 text-sm text-white font-normal">
               <a class="hover:opacity-75" href> About </a>
               <a class="hover:opacity-75" href> Meet the Team </a>
               <a class="hover:opacity-75" href> History </a>
@@ -59,7 +57,7 @@ const Footer = () => {
             <p class="font-medium">
               Services
             </p>
-            <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <nav class="flex flex-col mt-4 space-y-2 text-sm text-white font-normal">
               <a class="hover:opacity-75" href> 1on1 Coaching </a>
               <a class="hover:opacity-75" href> Company Review </a>
               <a class="hover:opacity-75" href> Accounts Review </a>
@@ -71,7 +69,7 @@ const Footer = () => {
             <p class="font-medium">
               Helpful Links
             </p>
-            <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <nav class="flex flex-col mt-4 space-y-2 text-sm text-white font-normal">
               <a class="hover:opacity-75" href> Contact </a>
               <a class="hover:opacity-75" href> FAQs </a>
               <a class="hover:opacity-75" href> Live Chat </a>
@@ -81,7 +79,7 @@ const Footer = () => {
             <p class="font-medium">
               Legal
             </p>
-            <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <nav class="flex flex-col mt-4 space-y-2 text-sm text-white font-normal">
               <a class="hover:opacity-75" href> Privacy Policy </a>
               <a class="hover:opacity-75" href> Terms &amp; Conditions </a>
               <a class="hover:opacity-75" href> Returns Policy </a>
@@ -90,7 +88,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p class="mt-8 text-xs text-gray-800">
+      <p class="mt-8 text-xs text-gray-500">
         © 2022 Comany Name
       </p>
     </div>
