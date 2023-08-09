@@ -59,13 +59,13 @@ app.get('/api/movies', async (req, res) => {
 
 // Route to add a new Movie
 app.post('/api/movies', async (req, res) => {
-  const { name, description, cast, country, image, genre, releaseDate,videoQuality,duration,kind } = req.body;
+  const { name, description, cast, country, image, genre, releaseDate, videoQuality, duration, kind } = req.body;
   if (!name || !description || !cast || !country || !image || !genre || !releaseDate || !videoQuality || !duration || !kind) {
     return res.status(400).json({ error: 'Please provide all required fields.' });
   }
 
   try {
-    const newMovie = new Movie({ name, description, cast, country, image, genre, releaseDate,videoQuality,duration,kind });
+    const newMovie = new Movie({ name, description, cast, country, image, genre, releaseDate, videoQuality, duration, kind });
     const savedMovie = await newMovie.save();
     res.status(201).json(savedMovie);
   } catch (err) {
