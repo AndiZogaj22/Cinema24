@@ -1,8 +1,19 @@
 import React from 'react'
 import  { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FiUser, FiLogOut } from 'react-icons/fi';
+
+
+
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(true)
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const [toggle, setToggle] = useState(false)
   return(
     <nav class="flex  dark:bg-slate-900 items-center relative justify-between bg-inherit	 px-5 py-6 w-full drop-shadow-xl ">
   <div>
@@ -17,47 +28,110 @@ const Navbar = () => {
         <path d="M1.47071 20.971H14.548C13.5798 22.2547 13.0568 23.8193 13.0585 25.4274C13.0585 27.3973 13.8411 29.2865 15.2339 30.6794C16.6269 32.0723 18.5162 32.8549 20.4861 32.8549C22.4558 32.8549 24.345 32.0723 25.738 30.6794C27.131 29.2865 27.9135 27.3973 27.9135 25.4274C27.9135 25.0334 27.757 24.6555 27.4784 24.3769C27.1998 24.0983 26.8219 23.9418 26.4279 23.9418C26.0339 23.9418 25.656 24.0983 25.3775 24.3769C25.0989 24.6555 24.9424 25.0334 24.9424 25.4274C24.9424 26.3088 24.6811 27.1704 24.1914 27.9033C23.7017 28.6362 23.0057 29.2074 22.1914 29.5447C21.3771 29.882 20.481 29.9703 19.6166 29.7984C18.7521 29.6264 17.9579 29.202 17.3348 28.5788C16.7115 27.9555 16.287 27.1615 16.115 26.297C15.9431 25.4325 16.0313 24.5364 16.3686 23.7222C16.706 22.9078 17.2771 22.2117 18.01 21.722C18.7429 21.2323 19.6045 20.971 20.4859 20.971H39.4996C39.6959 20.9729 39.8907 20.936 40.0726 20.8622C40.2546 20.7885 40.4201 20.6793 40.5596 20.5412C40.6992 20.403 40.8099 20.2387 40.8855 20.0575C40.9611 19.8762 41 19.6818 41 19.4855C41 19.2893 40.9611 19.0948 40.8855 18.9136C40.8099 18.7324 40.6992 18.5681 40.5596 18.4299C40.4201 18.2918 40.2546 18.1826 40.0726 18.1089C39.8907 18.0351 39.6959 17.9981 39.4996 18.0001H1.47071C1.07935 18.0039 0.705326 18.1622 0.429928 18.4404C0.15453 18.7184 0 19.0941 0 19.4855C0 19.877 0.15453 20.2526 0.429928 20.5307C0.705326 20.8089 1.07935 20.9672 1.47071 20.971Z" fill="#0346F2" />
       </svg>
     </div>
-    <li class="font-medium text-2xl p-3 text-white hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-primary">
-      <a href="#" class="dark:text-white hover:opacity-75">Home</a>
-    </li>
-    <li class="font-medium text-2xl p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-white hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white hover:opacity-75">Genres</a>
-    </li>
-    <li class="font-medium text-2xl p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-white hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white hover:opacity-75">Movies</a>
-    </li>
-    <li class="font-medium text-2xl p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-white hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white hover:opacity-75">TV Shows</a>
-    </li>
-    <li class="font-medium text-2xl p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-white hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white hover:opacity-75">Top IMDB</a>
-    </li>
+    <li className="font-medium text-2xl p-3 text-white hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-primary">
+  <Link to="/" className="dark:text-white hover:opacity-75">Home</Link>
+</li>
+<div className="relative inline-block font-medium text-2xl p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-white hover:text-primary transition-colors">
+      <button
+        onClick={toggleDropdown}
+        className="dark:text-white hover:opacity-75"
+      >
+        Genres
+      </button>
+      {isOpen && (
+        <div className="absolute top-full left-0 mt-1 bg-gray-200 shadow-lg rounded-md">
+          <a
+            href="#"
+            className="block py-3 px-4 text-black text-sm hover:bg-gray-300"
+          >
+           Action
+          </a>
+          <a
+            href="#"
+            className="block py-3 px-4 text-black text-sm hover:bg-gray-300"
+          >
+            Comedy
+          </a>
+          <a
+            href="#"
+            className="block py-3 px-4 text-black text-sm hover:bg-gray-300"
+          >
+            Drama
+          </a>
+          <a
+            href="#"
+            className="block py-3 px-4 text-black text-sm hover:bg-gray-300"
+          >
+            Thriller
+          </a>
+          <a
+            href="#"
+            className="block py-3 px-4 text-black text-sm hover:bg-gray-300"
+          >
+            Horror
+          </a>
+          <a
+            href="#"
+            className="block py-3 px-4 text-black text-sm hover:bg-gray-300"
+          >
+            Romance
+          </a>
+          <a
+            href="#"
+            className="block py-3 px-4 text-black text-sm hover:bg-gray-300"
+          >
+            Adventure
+          </a>
+          <a
+            href="#"
+            className="block py-3 px-4 text-black text-sm hover:bg-gray-300"
+          >
+            Western
+          </a>
+          <a
+            href="#"
+            className="block py-3 px-4 text-black text-sm hover:bg-gray-300"
+          >
+            Family
+          </a>
+          <a
+            href="#"
+            className="block py-3 px-4 text-black text-sm hover:bg-gray-300"
+          >
+            Kids
+          </a>
+        </div>
+      )}
+    </div>
+<li className="font-medium text-2xl p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-white hover:text-primary transition-colors">
+  <Link to="/movies" className="dark:text-white hover:opacity-75">Movies</Link>
+</li>
+<li className="font-medium text-2xl p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-white hover:text-primary transition-colors">
+  <Link to="/tvshows" className="dark:text-white hover:opacity-75">TV Shows</Link>
+</li>
+
   </ul>
   <div class="flex gap-3 items-center">
-
-    <div  onClick={() => setToggle(!toggle)} class="h-14 w-14 hover:ring-4 user cursor-pointer relative ring-blue-700/30 rounded-full bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')]">      
-       <div class="drop-down  w-48 overflow-hidden bg-white rounded-md shadow absolute top-12 right-3">
-       {toggle && (
-        <ul>
-          <li class="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-100">
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </span>
-            <button> My Account </button>
-          </li>
-          <li class="px-3  py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-100">
-            <span>
-         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-</svg>
-            </span>
-            <button> Logout </button>
-          </li>
-        </ul>
-         )}
+  <div>
+      <div onClick={() => setToggle(!toggle)} className="h-14 w-14 hover:ring-4 user cursor-pointer relative ring-blue-700/30 rounded-full bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')]">
+        <div className="drop-down w-48 overflow-hidden bg-white rounded-md shadow absolute top-12 right-3">
+          {toggle && (
+            <ul>
+              <li className="px-3 py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-100">
+                <span>
+                  <FiUser className="h-5 w-5" />
+                </span>
+                <Link to="/myaccount">My Account</Link>
+              </li>
+              <li className="px-3  py-3 text-sm font-medium flex items-center space-x-2 hover:bg-slate-100">
+                <span>
+                  <FiLogOut className="h-6 w-6" />
+                </span>
+                <button>Logout</button>
+              </li>
+            </ul>
+          )}
+        </div>
       </div>
     </div>
     <div class="sm:hidden cursor-pointer" id="mobile-toggle">

@@ -1,11 +1,12 @@
 import React from 'react'
 
-const About = () => {
+const Movies = () => {
   return (
     <div>
-   
+    
+   123
     </div>
   )
 }
 
-export default About
+export default Movies
