@@ -1,42 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 const MovieList = () => {
-  const [movies, setMovies] = useState([]);
+  const [showDataList, setShowDataList] = useState([]);
 
   useEffect(() => {
-    // Fetch recipe data from the API
-    axios.get('https://dummyapi.online/api/movies').then((response) => {
-      setMovies(response.data);
-    });
+    // Replace 'YOUR_API_URL' with the actual URL of your API
+    fetch('http://localhost:3000/api/movies')
+      .then(response => response.json())
+      .then(data => setShowDataList(data))
+      .catch(error => console.error(error));
   }, []);
 
+  if (showDataList.length === 0) {
+    return <p>Loading...</p>;
+  }
+
   return (
-    <div>
-      <div className="recipe-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
-        {movies.map((movie) => (
-          <div key={movie.id} className="card w-96 h-96 bg-base-100 shadow-xl pb-24" style={{ margin: '30px' }}>
-            <figure className="px-10 pt-15" style={{ height: '50%' }}>
-              <img
-                src={movie.image}
-                alt={movie.movie}
-                className="rounded-xl"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-            </figure>
-            <div className="card-body items-center text-center" style={{ height: '50%' }}>
-              <h2 className="card-title">{movie.movie}</h2>
-              <h2 className="badge badge-outline p-3">{movie.rating}</h2>
-              <p>{truncateDescription(movie.description)}</p>
-              <div className="card-actions">
-                <a href={movie.imdb_url} target="_blank" rel="noopener noreferrer">
-                  Watch Now
-                </a>
-              </div>
-            </div>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {showDataList.map((showData, index) => (
+        <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg">
+          <img className="w-full" src={showData.image} alt={showData.name} />
+          <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2">{showData.name}</div>
+            <p className="text-gray-700 text-base">{showData.description}</p>
           </div>
-        ))}
-      </div>
+          <div className="px-6 pt-4 pb-2">
+            {showData.genre.split(', ').map((genre, genreIndex) => (
+              <span
+                key={genreIndex}
+                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+              >
+                #{genre}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
